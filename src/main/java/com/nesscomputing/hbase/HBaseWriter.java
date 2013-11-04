@@ -245,7 +245,7 @@ public class HBaseWriter extends AbstractHBaseSupport implements Runnable
         LOG.warnDebug(t, "Could not send data to HBase, sleeping for %d ms...", backoffTime);
 
         Thread.sleep(backoffTime);
-        final boolean maxBackoff = (backoff == (1 << hbaseWriterConfig.getMaxBackoffFactor()));
+        final boolean maxBackoff = backoff == 1 << hbaseWriterConfig.getMaxBackoffFactor();
         if (!maxBackoff) {
             backoff <<= 1;
         }

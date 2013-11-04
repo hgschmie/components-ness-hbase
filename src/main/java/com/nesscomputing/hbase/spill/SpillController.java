@@ -88,7 +88,7 @@ public class SpillController
             spillingOkDir = createSpillFolder(baseDir, "success");
             spillingFailDir = createSpillFolder(baseDir, "failed");
 
-            this.spillingEnabled = (spillingSrcDir != null) && (spillingOkDir != null) && (spillingFailDir != null);
+            this.spillingEnabled = spillingSrcDir != null && spillingOkDir != null && spillingFailDir != null;
         }
         else {
             spillingSrcDir = null;
