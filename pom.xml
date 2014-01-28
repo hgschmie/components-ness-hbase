@@ -1,49 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>com.nesscomputing</groupId>
-    <artifactId>ness-oss-parent</artifactId>
-    <version>33</version>
+    <artifactId>ness-root</artifactId>
+    <version>1.0-SNAPSHOT</version>
   </parent>
-
-  <scm>
-    <connection>scm:git:git://github.com/NessComputing/components-ness-hbase.git</connection>
-    <developerConnection>scm:git:git@github.com:NessComputing/components-ness-hbase.git</developerConnection>
-    <url>http://github.com/NessComputing/components-ness-hbase</url>
-    <tag>HEAD</tag>
-  </scm>
 
   <groupId>com.nesscomputing.components</groupId>
   <artifactId>ness-hbase</artifactId>
   <name>ness-hbase</name>
-  <version>2.2.2-SNAPSHOT</version>
   <packaging>jar</packaging>
   <description>Ness HBase glue code.</description>
 
   <properties>
-    <dep.jackson.version>1.9.9</dep.jackson.version>
-    <dep.version.cloudera>cdh4.0.1</dep.version.cloudera>
+    <dep.zookeeper.version>3.4.3-${dep.cloudera.version}</dep.zookeeper.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>com.nesscomputing.components</groupId>
       <artifactId>ness-logging</artifactId>
-      <version>1.1.1</version>
     </dependency>
 
     <dependency>
       <groupId>com.nesscomputing.components</groupId>
       <artifactId>ness-lifecycle</artifactId>
-      <version>1.3.0</version>
     </dependency>
 
     <dependency>
       <groupId>com.nesscomputing.components</groupId>
       <artifactId>ness-config</artifactId>
-      <version>2.2.0</version>
     </dependency>
 
     <dependency>
@@ -72,161 +59,24 @@
     </dependency>
 
     <dependency>
-      <groupId>com.nesscomputing.testing</groupId>
-      <artifactId>findbugs-annotations</artifactId>
-      <version>2.0.0</version>
-    </dependency>
-
-    <dependency>
       <groupId>com.google.code.findbugs</groupId>
-      <artifactId>jsr305</artifactId>
+      <artifactId>annotations</artifactId>
     </dependency>
 
     <dependency>
       <groupId>org.weakref</groupId>
       <artifactId>jmxutils</artifactId>
-      <version>1.12</version>
     </dependency>
 
     <!-- Hadoop/Hbase -->
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-common</artifactId>
-      <version>2.0.0-${dep.version.cloudera}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>tomcat</groupId>
-          <artifactId>jasper-runtime</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>tomcat</groupId>
-          <artifactId>jasper-compiler</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>javax.servlet</groupId>
-          <artifactId>servlet-api</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>javax.servlet.jsp</groupId>
-          <artifactId>jsp-api</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jsp-api-2.1</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jsp-2.1</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.eclipse.jdt</groupId>
-          <artifactId>core</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>servlet-api-2.5</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>commons-httpclient</groupId>
-          <artifactId>commons-httpclient</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>commons-net</groupId>
-          <artifactId>commons-net</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging-api</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jetty</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jetty-util</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
 
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase</artifactId>
-      <version>0.92.1-${dep.version.cloudera}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>tomcat</groupId>
-          <artifactId>jasper-runtime</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>tomcat</groupId>
-          <artifactId>jasper-compiler</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>javax.servlet</groupId>
-          <artifactId>servlet-api</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jsp-api-2.1</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jsp-2.1</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>servlet-api-2.5</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jetty</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jetty-util</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.jruby</groupId>
-          <artifactId>jruby-complete</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>commons-httpclient</groupId>
-          <artifactId>commons-httpclient</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>commons-net</groupId>
-          <artifactId>commons-net</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.sun.jersey</groupId>
-          <artifactId>jersey-core</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.sun.jersey</groupId>
-          <artifactId>jersey-json</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.sun.jersey</groupId>
-          <artifactId>jersey-server</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.codehaus.jackson</groupId>
-          <artifactId>jackson-jaxrs</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.codehaus.jackson</groupId>
-          <artifactId>jackson-xc</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.jamon</groupId>
-          <artifactId>jamon-runtime</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-log4j12</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
 
     <dependency>
@@ -234,129 +84,11 @@
       <artifactId>easymock</artifactId>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.codehaus.jackson</groupId>
-        <artifactId>jackson-mapper-asl</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.codehaus.jackson</groupId>
-        <artifactId>jackson-core-asl</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.jboss.netty</groupId>
-        <artifactId>netty</artifactId>
-        <version>3.2.7.Final</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.hadoop</groupId>
-        <artifactId>hadoop-core</artifactId>
-        <version>2.0.0-mr1-${dep.version.cloudera}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>tomcat</groupId>
-            <artifactId>jasper-runtime</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>tomcat</groupId>
-            <artifactId>jasper-compiler</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jsp-api-2.1</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jsp-2.1</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.eclipse.jdt</groupId>
-            <artifactId>core</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>servlet-api-2.5</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>commons-httpclient</groupId>
-            <artifactId>commons-httpclient</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>commons-net</groupId>
-            <artifactId>commons-net</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty-util</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-
-      <dependency>
-        <groupId>org.apache.zookeeper</groupId>
-        <artifactId>zookeeper</artifactId>
-        <version>3.4.3-${dep.version.cloudera}</version>
-        <exclusions>
-          <exclusion>
-            <artifactId>junit</artifactId>
-            <groupId>junit</groupId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>1.7.5</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>jul-to-slf4j</artifactId>
-        <version>1.7.5</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.5</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.xml.bind</groupId>
-        <artifactId>jaxb-api</artifactId>
-        <version>2.2.2</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-lang</groupId>
-        <artifactId>commons-lang</artifactId>
-        <version>2.6</version>
-      </dependency>
-
-    </dependencies>
-  </dependencyManagement>
 </project>

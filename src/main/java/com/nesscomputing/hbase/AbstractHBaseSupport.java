@@ -22,10 +22,10 @@ import javax.annotation.Nonnull;
 
 import com.google.common.base.Preconditions;
 
+import com.nesscomputing.logging.Log;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.client.HTable;
-
-import com.nesscomputing.logging.Log;
 
 public abstract class AbstractHBaseSupport
 {

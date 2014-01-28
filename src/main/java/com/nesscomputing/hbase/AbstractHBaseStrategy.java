@@ -17,10 +17,10 @@ package com.nesscomputing.hbase;
 
 import javax.annotation.Nonnull;
 
+import com.google.common.base.Preconditions;
+
 import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.Put;
-
-import com.google.common.base.Preconditions;
 
 /**
  * Convenience class for anything that wants to implements {@link HBaseStrategy} but only cares about either encoding or decoding.

@@ -20,6 +20,8 @@ import java.io.IOException;
 
 import com.google.common.io.Files;
 
+import com.nesscomputing.hbase.spill.SpillController;
+
 import org.apache.commons.io.Charsets;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.client.HTable;
@@ -29,14 +31,12 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.kitei.testing.lessio.AllowExternalProcess;
+import org.kitei.testing.lessio.AllowTmpDirAccess;
 import org.skife.config.TimeSpan;
 
-import com.nesscomputing.hbase.spill.SpillController;
-import com.nesscomputing.testing.lessio.AllowExternalProcess;
-import com.nesscomputing.testing.lessio.AllowLocalFileAccess;
-
-@AllowExternalProcess()
-@AllowLocalFileAccess(paths={"%TMP_DIR%"})
+@AllowExternalProcess
+@AllowTmpDirAccess
 public class TestHBaseSpill
 {
     private final File spillDir = Files.createTempDir();
@@ -145,7 +145,4 @@ public class TestHBaseSpill
         Assert.assertEquals(queueLength, spillController.getOpsDeqSpilled());
         Assert.assertEquals(1L, spillController.getSpillsOk());
     }
-
-
-
 }

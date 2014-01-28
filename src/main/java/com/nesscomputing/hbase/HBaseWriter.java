@@ -34,14 +34,14 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Lists;
 
+import com.nesscomputing.hbase.spill.SpillController;
+import com.nesscomputing.logging.Log;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
 import org.skife.config.TimeSpan;
 import org.weakref.jmx.Managed;
-
-import com.nesscomputing.hbase.spill.SpillController;
-import com.nesscomputing.logging.Log;
 
 /**
  * Batch writer to HBase.  Enqueues either as its buffer fills or periodically, to bound the amount of lost information.

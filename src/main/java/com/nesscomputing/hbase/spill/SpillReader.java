@@ -25,14 +25,14 @@ import javax.annotation.Nonnull;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 
+import com.nesscomputing.hbase.AbstractHBaseSupport;
+import com.nesscomputing.hbase.HBaseWriterConfig;
+import com.nesscomputing.logging.Log;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.client.Put;
 import org.skife.config.TimeSpan;
-
-import com.nesscomputing.hbase.AbstractHBaseSupport;
-import com.nesscomputing.hbase.HBaseWriterConfig;
-import com.nesscomputing.logging.Log;
 
 public class SpillReader extends AbstractHBaseSupport implements Runnable
 {

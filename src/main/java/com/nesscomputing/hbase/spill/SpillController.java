@@ -35,12 +35,12 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.io.Closeables;
 
-import org.apache.hadoop.hbase.client.Put;
-import org.weakref.jmx.Managed;
-
 import com.nesscomputing.hbase.HBaseWriter;
 import com.nesscomputing.hbase.HBaseWriterConfig;
 import com.nesscomputing.logging.Log;
+
+import org.apache.hadoop.hbase.client.Put;
+import org.weakref.jmx.Managed;
 
 public class SpillController
 {

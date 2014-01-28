@@ -28,7 +28,7 @@ public interface HBaseStrategy<T>
     /**
      * Returns a human readable name for the objects that this strategy can process.
      */
-    public String getObjectName();
+    String getObjectName();
 
     /**
      * Convert a data object into an HBase Put operation.

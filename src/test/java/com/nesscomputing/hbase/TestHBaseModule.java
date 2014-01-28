@@ -15,15 +15,16 @@
  */
 package com.nesscomputing.hbase;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.google.inject.CreationException;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Stage;
+
 import com.nesscomputing.config.Config;
 import com.nesscomputing.config.ConfigModule;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class TestHBaseModule
 {

@@ -28,10 +28,10 @@ import javax.annotation.Nullable;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 
+import com.nesscomputing.logging.Log;
+
 import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.client.Put;
-
-import com.nesscomputing.logging.Log;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 

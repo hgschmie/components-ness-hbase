@@ -20,6 +20,8 @@ import java.util.concurrent.Callable;
 
 import com.google.common.collect.Lists;
 
+import com.nesscomputing.hbase.spill.SpillController;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.client.Put;
 import org.easymock.EasyMock;
@@ -28,8 +30,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.skife.config.TimeSpan;
-
-import com.nesscomputing.hbase.spill.SpillController;
 
 public class TestHBaseWriter
 {

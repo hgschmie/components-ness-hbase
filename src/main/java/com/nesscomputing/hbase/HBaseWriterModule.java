@@ -28,16 +28,16 @@ import com.google.inject.Scopes;
 import com.google.inject.name.Named;
 import com.google.inject.name.Names;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.hadoop.conf.Configuration;
-import org.weakref.jmx.guice.MBeanModule;
-
 import com.nesscomputing.config.ConfigProvider;
 import com.nesscomputing.hbase.spill.SpillController;
 import com.nesscomputing.hbase.spill.SpillReader;
 import com.nesscomputing.lifecycle.LifecycleStage;
 import com.nesscomputing.lifecycle.guice.AbstractLifecycleProvider;
 import com.nesscomputing.lifecycle.guice.LifecycleAction;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.hadoop.conf.Configuration;
+import org.weakref.jmx.guice.MBeanModule;
 /**
  * Defines a new HBase writer. Each writer can have its own configuration.
  */

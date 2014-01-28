@@ -15,14 +15,15 @@
  */
 package com.nesscomputing.hbase;
 
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hbase.HBaseConfiguration;
-
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Scopes;
 import com.google.inject.Singleton;
+
 import com.nesscomputing.config.ConfigProvider;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.HBaseConfiguration;
 
 /**
  * Provides handy bindings for interacting with HBase.
